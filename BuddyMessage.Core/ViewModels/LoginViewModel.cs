@@ -22,6 +22,7 @@ namespace BuddyMessage.Core
             {
                 settings.User = await service.Login(Username, Password);
                 settings.Save();
+				//service.LoadData();
             }
             finally
             {

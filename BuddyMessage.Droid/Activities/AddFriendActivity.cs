@@ -35,10 +35,6 @@ namespace BuddyMessage.Droid
 						viewModel.Username = addFriendEditText.Text;
 						await viewModel.AddFriend();
 					}
-					catch (Exception exc)
-					{
-
-					}
 					finally
 					{
 						Finish();

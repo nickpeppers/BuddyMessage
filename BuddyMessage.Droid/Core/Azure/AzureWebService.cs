@@ -25,14 +25,10 @@ namespace BuddyMessage.Core
 			var conversations = client.GetTable<Conversation>();
 			var messages = client.GetTable<Message>();
 
-            var me = new User { Username = "Nick", Password = "password" };
-            var friend = new User { Username = "Chuck", Password = "password" };
-
-			await users.InsertAsync(me);
-			await users.InsertAsync(friend);
-
-			await friends.InsertAsync(new Friend { MyId = me.Id, Username = friend.Username });
-			await friends.InsertAsync(new Friend { MyId = friend.Id, Username = me.Username });
+			var userList = await client.GetTable<User>().Where (u => u.Username == "Nick").ToListAsync();
+			var me = userList [0];
+			userList = await client.GetTable<User>().Where (u => u.Username == "Chuck").ToListAsync ();
+			var friend = userList [0]; 
 
 			var conversation = new Conversation { MyId = me.Id, UserId = friend.Id, Username = friend.Username, LastMessage = "HEY!" };
 
@@ -105,7 +101,7 @@ namespace BuddyMessage.Core
 
 		public async Task<Conversation[]> GetConversations(string userId)
 		{
-			var list = await client.GetTable<Conversation>().Where(c => c.MyId == userId).ToListAsync();
+			var list = await client.GetTable<Conversation>().Where(c => c.MyId == userId || c.UserId == userId).ToListAsync();
 			return list.ToArray();
 		}
 

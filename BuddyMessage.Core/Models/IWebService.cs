@@ -5,6 +5,8 @@ namespace BuddyMessage.Core
 {
     public interface IWebService
     {
+		Task LoadData ();
+
         Task<User> Login(string username, string password);
 
         Task<User> Register(User user);

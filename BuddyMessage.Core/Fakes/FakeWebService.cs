@@ -21,6 +21,11 @@ namespace BuddyMessage.Core
 #endif
         }
 
+		public async Task LoadData()
+		{
+			await Sleep ();
+		}
+
         public async Task<User> Login(string username, string password)
         {
             await Sleep();

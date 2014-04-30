@@ -19,8 +19,13 @@ namespace BuddyMessage.Core
 			IsBusy = true;
 			try
 			{
-				Conversation = new Conversation { MyId = settings.User.Id, UserId = friendId, Username = friendUsername, LastMessage = string.Empty };
-				Conversation = await service.CreateConversation(Conversation);
+				Conversation = new Conversation { MyId = settings.User.Id, UserId = friendId, Username = friendUsername };
+				var currentConversation = await service.CreateConversation(Conversation);
+				Conversation = currentConversation;
+				if(Conversations.Length < 1)
+				{
+					Conversations = new Conversation[]{Conversation};
+				}
 			}
 			finally
 			{
