@@ -67,6 +67,12 @@ namespace BuddyMessage.Core
             };
         }
 
+		public async Task<Conversation> CreateConversation(Conversation conversation)
+		{
+			await Sleep ();
+			return conversation;
+		}
+
         public async Task<Message[]> GetMessages(string conversationId)
         {
             await Sleep();

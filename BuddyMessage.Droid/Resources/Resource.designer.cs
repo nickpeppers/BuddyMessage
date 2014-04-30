@@ -60,53 +60,59 @@ namespace BuddyMessage.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f06000f
-			public const int addFriendMenu = 2131099663;
-			
 			// aapt resource value: 0x7f060001
-			public const int conversationLastMessage = 2131099649;
+			public const int AddFriendButton = 2131099649;
 			
 			// aapt resource value: 0x7f060000
-			public const int conversationUsername = 2131099648;
+			public const int AddFriendEditText = 2131099648;
 			
-			// aapt resource value: 0x7f060002
-			public const int conversationsList = 2131099650;
+			// aapt resource value: 0x7f060011
+			public const int addFriendMenu = 2131099665;
 			
 			// aapt resource value: 0x7f060003
-			public const int friendName = 2131099651;
+			public const int conversationLastMessage = 2131099651;
+			
+			// aapt resource value: 0x7f060002
+			public const int conversationUsername = 2131099650;
 			
 			// aapt resource value: 0x7f060004
-			public const int friendsList = 2131099652;
-			
-			// aapt resource value: 0x7f060007
-			public const int login = 2131099655;
-			
-			// aapt resource value: 0x7f060008
-			public const int messageList = 2131099656;
-			
-			// aapt resource value: 0x7f06000a
-			public const int messageText = 2131099658;
-			
-			// aapt resource value: 0x7f06000c
-			public const int myMessageDate = 2131099660;
-			
-			// aapt resource value: 0x7f06000b
-			public const int myMessageText = 2131099659;
-			
-			// aapt resource value: 0x7f060006
-			public const int password = 2131099654;
-			
-			// aapt resource value: 0x7f060009
-			public const int sendButton = 2131099657;
-			
-			// aapt resource value: 0x7f06000e
-			public const int theirMessageDate = 2131099662;
-			
-			// aapt resource value: 0x7f06000d
-			public const int theirMessageText = 2131099661;
+			public const int conversationsList = 2131099652;
 			
 			// aapt resource value: 0x7f060005
-			public const int username = 2131099653;
+			public const int friendName = 2131099653;
+			
+			// aapt resource value: 0x7f060006
+			public const int friendsList = 2131099654;
+			
+			// aapt resource value: 0x7f060009
+			public const int login = 2131099657;
+			
+			// aapt resource value: 0x7f06000a
+			public const int messageList = 2131099658;
+			
+			// aapt resource value: 0x7f06000c
+			public const int messageText = 2131099660;
+			
+			// aapt resource value: 0x7f06000e
+			public const int myMessageDate = 2131099662;
+			
+			// aapt resource value: 0x7f06000d
+			public const int myMessageText = 2131099661;
+			
+			// aapt resource value: 0x7f060008
+			public const int password = 2131099656;
+			
+			// aapt resource value: 0x7f06000b
+			public const int sendButton = 2131099659;
+			
+			// aapt resource value: 0x7f060010
+			public const int theirMessageDate = 2131099664;
+			
+			// aapt resource value: 0x7f06000f
+			public const int theirMessageText = 2131099663;
+			
+			// aapt resource value: 0x7f060007
+			public const int username = 2131099655;
 			
 			static Id()
 			{
@@ -122,7 +128,7 @@ namespace BuddyMessage.Droid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int AddFriendLayout = 2130903040;
+			public const int AddFriend = 2130903040;
 			
 			// aapt resource value: 0x7f030001
 			public const int ConversationListItem = 2130903041;

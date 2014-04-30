@@ -21,11 +21,22 @@ namespace BuddyMessage.Droid
         Button sendButton;
         Adapter adapter;
 
-        protected override void OnCreate(Bundle bundle)
+		protected override async void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            Title = viewModel.Conversation.Username;
+			var fromFriends = Intent.GetBooleanExtra ("FromFriends", false);
+			var friendId = Intent.GetStringExtra ("FriendToId");
+			var friendUsername = Intent.GetStringExtra ("FriendUserName");
+			if (fromFriends) 
+			{
+				Title = friendUsername;
+				await viewModel.CreateConversation (friendId, friendUsername);
+			} 
+			else 
+			{
+				Title = viewModel.Conversation.Username;
+			}
 
             SetContentView(Resource.Layout.Messages);
 

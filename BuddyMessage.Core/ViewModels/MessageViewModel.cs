@@ -14,6 +14,21 @@ namespace BuddyMessage.Core
 
         public string Text { get; set; }
 
+		public async Task CreateConversation(string friendId, string friendUsername)
+		{
+			IsBusy = true;
+			try
+			{
+				Conversation = new Conversation { MyId = settings.User.Id, UserId = friendId, Username = friendUsername, LastMessage = string.Empty };
+				Conversation = await service.CreateConversation(Conversation);
+			}
+			finally
+			{
+				IsBusy = false;
+			}
+
+		}
+
         public async Task GetConversations()
         {
             if (settings.User == null)

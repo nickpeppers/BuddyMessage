@@ -27,6 +27,16 @@ namespace BuddyMessage.Droid
             listView = FindViewById<ListView>(Resource.Id.friendsList);
             listView.Adapter =
                 adapter = new Adapter(this);
+				
+			listView.ItemClick += (sender, e) => 
+			{
+				var friend = viewModel.Friends[e.Position];
+				var messageIntent = new Intent(this, typeof(MessagesActivity));
+				messageIntent.PutExtra("FriendToId", friend.Id);
+				messageIntent.PutExtra("FriendUserName", friend.Username);
+				messageIntent.PutExtra("FromFriends", true);
+				StartActivity(messageIntent);
+			};
         }
 
         protected async override void OnResume()
@@ -55,7 +65,7 @@ namespace BuddyMessage.Droid
         {
             if (item.ItemId == Resource.Id.addFriendMenu)
             {
-                //StartActivity(typeof(FriendsActivity));
+				StartActivity(typeof(AddFriendActivity));
             }
             return base.OnOptionsItemSelected(item);
         }

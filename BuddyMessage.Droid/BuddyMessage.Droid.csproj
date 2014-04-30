@@ -132,7 +132,7 @@
     <AndroidResource Include="Resources\layout\Messages.axml" />
     <AndroidResource Include="Resources\layout\MyMessageListItem.axml" />
     <AndroidResource Include="Resources\layout\TheirMessageListItem.axml" />
-    <AndroidResource Include="Resources\layout\AddFriendLayout.axml" />
+    <AndroidResource Include="Resources\layout\AddFriend.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

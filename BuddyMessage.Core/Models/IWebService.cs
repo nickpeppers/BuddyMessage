@@ -15,6 +15,8 @@ namespace BuddyMessage.Core
 
 		Task<Conversation[]> GetConversations(string userId);
 
+		Task<Conversation> CreateConversation(Conversation conversation);
+
 		Task<Message[]> GetMessages(string conversationId);
 
         Task<Message> SendMessage(Message message);

@@ -93,7 +93,12 @@ namespace BuddyMessage.Core
 
 		public async Task<User> AddFriend(string userId, string username)
 		{
-			var friend = new Friend { MyId = userId, Username = username };
+			Friend friend = new Friend { MyId = userId, Username = username };
+			var users = await client.GetTable<User>().Where(u => u.Username == username).ToListAsync();
+			if(users.Count > 0)
+			{
+				friend.UserId = users [0].Id;
+			}
 			await client.GetTable<Friend>().InsertAsync(friend);
 			return new User { Id = friend.UserId, Username = friend.Username };
 		}
@@ -102,6 +107,13 @@ namespace BuddyMessage.Core
 		{
 			var list = await client.GetTable<Conversation>().Where(c => c.MyId == userId).ToListAsync();
 			return list.ToArray();
+		}
+
+		public async Task<Conversation> CreateConversation(Conversation conversation)
+		{
+			await client.GetTable<Conversation>().InsertAsync(conversation);
+			var conversations = await client.GetTable<Conversation> ().Where (c => c.MyId == conversation.MyId && c.UserId == conversation.UserId).ToListAsync();
+			return conversations[0];
 		}
 
 		public async Task<Message[]> GetMessages(string conversationId)

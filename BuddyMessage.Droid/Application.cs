@@ -12,7 +12,7 @@ using BuddyMessage.Core;
 
 namespace BuddyMessage.Droid
 {
-    [Application(Theme = "@android:style/Theme.Holo.Light")]
+    [Application()]
     public class Application : Android.App.Application
     {
         public Application(IntPtr javaReference, JniHandleOwnership transfer)
